@@ -1,0 +1,9 @@
+version: "3.5"
+services:
+  app:
+    image: containrrr/watchtower:latest
+    container_name: watchtower
+    command: --include-stopped --interval=600 --label-enable --revive-stopped --rolling-restart --stop-timeout=30s
+    read_only: yes
+    volumes:
+      /var/run/docker.sock:/var/run/docker.sock
