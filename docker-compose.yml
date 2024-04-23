@@ -4,6 +4,6 @@ services:
     restart: always
     container_name: watchtower
     command: --include-stopped --interval=600 --revive-stopped --rolling-restart --stop-timeout=30s
-    read_only: yes
+    read_only: true
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
