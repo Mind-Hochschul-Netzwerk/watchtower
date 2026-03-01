@@ -3,7 +3,7 @@ services:
     image: nickfedor/watchtower:latest
     restart: always
     container_name: watchtower
-    command: --interval=86400
+    command: --include-stopped --interval=600 --revive-stopped --rolling-restart --stop-timeout=30s
     read_only: true
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
